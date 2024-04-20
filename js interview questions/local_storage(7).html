@@ -1,0 +1,87 @@
+<!-- <--The Local Storage Manager:
+    You are working on a note-taking app, and you want to implement a function named saveNoteToLocalStorage that takes a note object and saves it to the browser's local storage. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local storage Manager</title>
+</head>
+
+<body>
+    <button>Add Note</button>
+    <div class="note"></div>
+    <script>
+        function saveNoteToLocalStorage(note)
+        {
+            localStorage.setItem("note", note)
+        }
+        let note = localStorage.getItem("note")
+        if(note){
+            document.querySelector(".note").innerHTML=note
+        }
+
+        document.querySelector("button").addEventListener("click",()=>{
+            let note = prompt("Enter your name")
+            saveNoteToLocalStorage(note)
+            document.querySelector(".note").innerHTML=note
+        })
+           
+        
+        
+        // if (localStorage.getItem("name")) {
+        //     a = localStorage.getItem("name")
+        //     document.write("Welcome " + a)
+        // } else {
+        //     let a = prompt("Enter your name")
+
+        //     localStorage.setItem("name", a)
+        //     document.write("Welcome " + a)
+        // }
+
+
+
+        // Inspect console
+        // a
+/*
+'hisham'
+a={harry:1,rohan:69}
+{harry: 1, rohan: 69}
+JSON
+JSON {Symbol(Symbol.toStringTag): 'JSON', parse: ƒ, stringify: ƒ, rawJSON: ƒ, isRawJSON: ƒ}
+JSON.stringify(a)
+'{"harry":1,"rohan":69}'
+localStorage.setItem("guys")
+VM551:1 Uncaught TypeError: Failed to execute 'setItem' on 'Storage': 2 arguments required, but only 1 present.
+    at <anonymous>:1:14
+(anonymous) @ VM551:1
+localStorage.setItem("guys",a)
+undefined
+localstorage.getItem("guys",JSON.stringify(a))
+VM757:1 Uncaught ReferenceError: localstorage is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM757:1
+localStorage.getItem("guys",JSON.stringify(a))
+'[object Object]'
+localStorage.setItem("guys",JSON.stringify(a))
+undefined
+a={"harry":1,"rohan":67}
+{harry: 1, rohan: 67}
+localStorage.setItem("guys",JSON.stringify(a))
+undefined
+localStorage.setItem("guys")
+VM962:1 Uncaught TypeError: Failed to execute 'setItem' on 'Storage': 2 arguments required, but only 1 present.
+    at <anonymous>:1:14
+(anonymous) @ VM962:1
+localStorage.getItem("guys")
+'{"harry":1,"rohan":67}'
+JSON.parse(localStorage.getItem("guys"))
+{harry: 1, rohan: 67}
+localStorage.getItem("guys")
+'{"harry":1,"rohan":67}'*/
+    </script>
+</body>
+
+</html>
